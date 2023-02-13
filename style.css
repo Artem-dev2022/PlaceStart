@@ -40,9 +40,16 @@ body {
     font-family: 'Manrope';
     color: #333333;
     background-image: url(./images/tree-ring-vectors-1.png);
-    background-image: url(./images/tree-ring-vectors.png);
-    background-position: 0px 550px;
-    background-position: 200px 550px;
+    background-position: 1500px 1200px ;
+}
+
+.background-image {
+    position: absolute;
+    top: 2174px;
+    left: -84px;
+    width: 529px;
+    height: 541px;
+    z-index: -10;
 }
 
 a {
@@ -55,12 +62,33 @@ a {
     line-height: 46px;
 }
 
+input {
+    padding: 23px 20px;
+    border: 1px solid #FFFFFF;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input:hover {
+    border: 1px solid #B3DAFF;
+}
+
+button {
+    border: none;
+}
+
 .btn {
     padding: 10px 20px;
     height: 40px;
     background: linear-gradient(165.46deg, #FF9700 10.14%, #FF6800 78.17%, #FF6802 78.33%);
     border-radius: 50px;
-    border: none;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
@@ -92,16 +120,92 @@ a {
     margin-right: 77px;
 }
 
-.header__list {
-    display: flex;
+.header__nav {
+    position: relative;
+    height: 100%;
 }
 
-.header__item{
-    
+.header__list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header__item {
+    padding-top: 32px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    transition: all 0.3s;
+    height: 100%;
+}
+
+svg path {
+    transition: all 0.3s;
+}
+
+.header__item:hover {
+    color: #FF9701;
+}
+
+.header__item:hover svg path {
+    fill: #FF9701;
 }
 
 .header__item:not(:last-child){
     margin-right: 50px;
+}
+
+.header__dropdown {
+    position: absolute;
+    padding: 20px;
+    width: 228px;
+    height: 120px;
+    top: 82px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.07);
+    border-radius: 0px 0px 5px 5px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header__dropdown__item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    transition: all 0.3s;
+}
+
+.header__dropdown__item:hover {
+    color: #FF9701;
+}
+
+.header__dropdown__projects {
+    left: 130px;
+}
+
+.header__dropdown__services {
+    left: 420px;
+}
+
+.header__btn {
+    background: none;
+    border: none;
+}
+
+.header__item__active {
+    color: #FF9701;
+}
+
+.header__item__active svg path {
+    fill: #FF9701;
+}
+
+.header__dropdown__active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .header__call {
@@ -111,7 +215,109 @@ a {
     width: 164px;
     height: 40px;
 }
+/* MODAL WINDOW */
+.modal__background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+}
 
+.modal--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 10px;
+    width: 270px;
+    height: 289px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.modal__close {
+    margin: 0 0 25px auto;
+    background: none;
+    cursor: pointer;
+}
+
+.modal__title {
+    margin-bottom: 19px;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.modal__field {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.modal__placeholder {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #777777;
+    transition: all 0.3s;
+}
+
+.modal__placeholder--active {
+    top: 7px;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.modal__input {
+    padding: 23px 20px 5px 20px;
+    width: 215px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #E3E1E1;
+    border-radius: 50px
+}
+
+.modal__input--error,
+.modal__input--error:hover {
+    border: 1px solid #FF0000;
+}
+
+.modal__btn {
+    margin-bottom: 13px;
+    width: 215px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.modal__personal-data {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.modal__personal-data a:hover {
+    text-decoration: underline;
+}
+/* MODAL WINDOW */
 .hero {
     position: relative;
     margin-bottom: 70px;
@@ -514,12 +720,10 @@ a {
 
 .want__input {
     margin-right: 10px;
-    padding: 14px 20px;
     width: 222px;
     height: 50px;
     background: #FFFFFF;
     border-radius: 50px;
-    border: none;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
