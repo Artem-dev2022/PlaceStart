@@ -98,10 +98,12 @@ burger.addEventListener('click', () => {
     projectsPage.classList.remove('header__dropdown__projects--active');
     if (cnt == 0) {
         cnt++;
-        window.addEventListener('scroll', scrollPage)
+        window.addEventListener('scroll', scrollPage);
     } else {
         cnt--;
-        window.removeEventListener('scroll', scrollPage)
+        window.removeEventListener('scroll', scrollPage);
+        projectsPage.classList.remove('header__dropdown__projects--active');
+        servicesPage.classList.remove('header__dropdown__services--active');
     }
 })
 
