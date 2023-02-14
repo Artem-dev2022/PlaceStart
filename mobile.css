@@ -196,6 +196,10 @@
     .work__item__content {
         transform: translateY(67px);
     }
+    .work__btn {
+        padding: 18px;
+        letter-spacing: -0.01rem;
+    }
     .advantage {
         margin-bottom: 15px;
     }
