@@ -5,17 +5,21 @@ const projectsDropdown = document.querySelector('.header__dropdown__projects');
 const servicesDropdown = document.querySelector('.header__dropdown__services');
 
 projectsBtn.addEventListener('mouseenter', () => {
-    projectsDropdown.classList.toggle('header__dropdown__active');
-    servicesDropdown.classList.remove('header__dropdown__active');
-    projectsBtn.classList.toggle('header__item__active');
-    servicesBtn.classList.remove('header__item__active');
+    if (window.screen.width >= 1920) {
+        projectsDropdown.classList.toggle('header__dropdown__active');
+        servicesDropdown.classList.remove('header__dropdown__active');
+        projectsBtn.classList.toggle('header__item__active');
+        servicesBtn.classList.remove('header__item__active');
+    }
 })
 
 servicesBtn.addEventListener('mouseenter', () => {
-    servicesDropdown.classList.toggle('header__dropdown__active');
-    projectsDropdown.classList.remove('header__dropdown__active');
-    servicesBtn.classList.toggle('header__item__active');
-    projectsBtn.classList.remove('header__item__active');
+    if (window.screen.width >= 1920) {
+        servicesDropdown.classList.toggle('header__dropdown__active');
+        projectsDropdown.classList.remove('header__dropdown__active');
+        servicesBtn.classList.toggle('header__item__active');
+        projectsBtn.classList.remove('header__item__active');
+    }
 })
 
 document.addEventListener('click', (e) => {
